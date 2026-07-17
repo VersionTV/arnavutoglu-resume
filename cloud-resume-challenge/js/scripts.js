@@ -1,3 +1,4 @@
+// Initialize essential functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -40,129 +41,49 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    window.addEventListener('scroll', () => {
-        let current = '';
+    // Only run the scroll listener if nav links exist
+    if (navLinks.length > 0) {
+        window.addEventListener('scroll', () => {
+            let current = '';
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Mobile menu toggle (if we had a hamburger menu)
-    // This would be implemented if we added a mobile nav
-
-    // Add some interactive elements
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            // Calculate tilt effect
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * 5;
-            const rotateY = ((centerX - x) / centerX) * 5;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-        });
-    });
-
-    // Add parallax effect to header on scroll
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.pageYOffset;
-        header.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-    });
-
-    // Add ripple effect to buttons
-    const buttons = document.querySelectorAll('.project-link, .certificate-link, .social-link');
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const x = e.clientX - e.target.offsetLeft;
-            const y = e.clientY - e.target.offsetTop;
-
-            const ripple = document.createElement('div');
-            ripple.style.position = 'absolute';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            ripple.style.width = '0';
-            ripple.style.height = '0';
-            ripple.style.borderRadius = '50%';
-            ripple.style.background = 'rgba(255, 255, 255, 0.7)';
-            ripple.style.pointerEvents = 'none';
-            ripple.style.transform = 'translate(-50%, -50%)';
-            ripple.style.transition = 'width 0.4s ease-out, height 0.4s ease-out';
-
-            e.target.style.position = 'relative';
-            e.target.style.overflow = 'hidden';
-            e.target.appendChild(ripple);
-
-            setTimeout(() => {
-                ripple.style.width = '200px';
-                ripple.style.height = '200px';
-                ripple.style.opacity = '0';
-            }, 0);
-
-            setTimeout(() => {
-                try {
-                    e.target.removeChild(ripple);
-                } catch (err) {
-                    // Element might have been removed
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
                 }
-            }, 600);
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
         });
+    }
+
+    // Scroll reveal animation for sections
+    const revealElements = document.querySelectorAll('.section');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Uncomment the line below if you want each section to animate only once
+                // revealObserver.unobserve(entry.target);
+            }
+            // Optional: Remove the comment below if you want elements to hide when scrolling back up
+            // else {
+            //     entry.target.classList.remove('visible');
+            // }
+        });
+    }, {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+        rootMargin: '0px 0px -50px 0px' // Trigger a bit before reaching the bottom
     });
 
-    // Add hover lift effect to cards
-    const cards = document.querySelectorAll('.glass-card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-5px)';
-            card.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15)';
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-            card.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
-        });
-    });
-
-    // Add magnetic button effect to social links
-    const socialLinks = document.querySelectorAll('.social-link');
-    socialLinks.forEach(link => {
-        link.addEventListener('mousemove', (e) => {
-            const rect = link.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const distanceX = ((x - centerX) / centerX) * 10;
-            const distanceY = ((y - centerY) / centerY) * 10;
-
-            link.style.transform = `translate(${distanceX}px, ${distanceY}px)`;
-        });
-
-        link.addEventListener('mouseleave', () => {
-            link.style.transform = 'translate(0px, 0px)';
-        });
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
     });
 });

@@ -1,6 +1,6 @@
 # Cloud Resume Challenge - Hasan Arnavutoğlu's Portfolio Website
 
-A modern, interactive resume/portfolio website built for the Cloud Resume Challenge, featuring a liquid glass (glassmorphism) design with smooth animations and responsive layout.
+A modern, interactive resume/portfolio website built for the Cloud Resume Challenge, featuring a liquid glass (glassmorphism) design with smooth animations, responsive layout, cursor interaction effects, and scroll-triggered animations.
 
 ## 🌐 Live Demo
 [https://yourusername.github.io/cloud-resume-challenge/](https://](https://yourusernamegithub)
@@ -9,9 +9,13 @@ A modern, interactive resume/portfolio website built for the Cloud Resume Challe
 
 - Fully responsive design (mobile, tablet)
 - **Theme**: Glassmorphism effects with backdrop-filter, blur, transparency, and light refraction effects
-- **typewriting Interacticaneffect5herocection5secticons**
-- **SwipeCardhover effects and animation card click animations**
-- **Skill progress animations** with scrolling triggers
+- **Cursor Interaction**: Interactive mouse cursor with hover effects (inspired by pszostak.pl)
+- **Scroll Animations**: Elements animate into view as you scroll (inspired by tajmirul.site)
+- **Typewriting Effect**: Animated text in hero section
+- **Skill Progress Animations**: Animated skill bars on scroll
+- **Hover Effects**: Lift, glow, and shadow effects on cards and buttons
+- **Ripple Effects**: Click ripples on interactive elements
+- **Magnetic Buttons**: Subtle magnetic pull on social links
 - **Secure and hosting ready** for AWS S3/CloudFront or any static hosting
 - **Accessibility focused** with semantic HTML and ARIA labels
 - **SEO optimized** with proper meta tags and structure
@@ -24,7 +28,7 @@ cloud-resume-challenge/
 ├── css/
 │   └── styles.css      # All styles including glass effects, animations, responsiveness
 ├── js/
-│   ├── particles.js    # Particle background effect
+│   ├── particles.js    # Particle background effect with cursor interaction
 │   ├── typed.js        # Typing animation for hero section
 │   └── scripts.js      # Main JavaScript functionality
 ├── assets/
@@ -56,8 +60,11 @@ cloud-resume-challenge/
 - Typing effect in hero section
 - Skill progress bar animations on scroll
 - Hover lift, glow, and shadow effects on cards
+- Cursor follower with interactive hover states
+- Ripple effect on buttons and links
+- Magnetic button effect on social links
 - Smooth scroll behavior
-- Responsive hamburger menu (mobile)
+- Parallax effect on header
 
 ### Responsive Breakpoints
 - **Desktop**: 1200px+
@@ -147,7 +154,8 @@ Computer Engineering graduate with strong interest in information technologies, 
 - **Light Accent**: `#66b3ff`
 
 ### Background
-- **Light Gradient**: `#f0f8ff` → `#ffffff` → `#e6f0ff`
+- **Dark Gradient**: `#0f0c29` → `#302b63` → `#242020`
+- **Light Accents**: Subtle radial gradients for depth and cursor effects
 
 ### Text Colors
 - **Dark Text**: `#1a1a3e`
@@ -164,6 +172,8 @@ This project is open source and available for personal use.
 ## 🙏 Acknowledgments
 
 - Design inspiration: Apple's Liquid Glass aesthetic from iOS 26/macOS Tahoe
+- Cursor interaction: Inspired by pszostak.pl
+- Scroll animations: Inspired by tajmirul.site
 - Icons: Font Awesome
 - Background particles: Custom JavaScript implementation
 - Typography: System fonts for optimal performance
