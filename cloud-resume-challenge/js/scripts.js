@@ -3,6 +3,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Initialize theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.body.classList.add('dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            document.body.classList.remove('dark');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+
+        // Theme toggle click handler
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+    }
+
     // Initialize skill animations
     const skillBars = document.querySelectorAll('.skill-progress');
     skillBars.forEach(bar => {
