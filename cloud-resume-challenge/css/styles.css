@@ -347,7 +347,7 @@ body::after {
 .container {
     position: relative;
     z-index: 2;
-    margin-top: 4rem; /* Compensate for fixed navbar */
+    margin-top: 6rem; /* Increased space for navbar */
 }
 
 /* Header */
