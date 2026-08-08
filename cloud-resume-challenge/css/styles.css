@@ -1562,7 +1562,7 @@ html {
     pointer-events:none;
     z-index:-1;
     background-image:
-        radial-gradient(circle at 5px 5px, var(--accent) 1px, transparent 1px);
+        radial-gradient(circle at 5px 5px, var(--accent) 2px, transparent 2px);
     background-size: 20px 20px;
-    opacity: 0.6;
+    opacity: 0.8;
 }
