@@ -279,7 +279,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     /* Animated liquid glass background */
 }
-
 body::before {
     content:"";
     position:fixed;
@@ -305,9 +304,10 @@ body::after {
     pointer-events:none;
     z-index:-1;
     background-image:
-        radial-gradient(circle at 5px 5px, var(--accent) 1px, transparent 1px);
+        linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.2) 1px, transparent 1px);
     background-size: 20px 20px;
-    opacity: 0.4;
+    opacity: 0.7;
 }
 
 /* Adjust body::before colors via variables - we can't easily vary alpha per layer, keep as is but adjust overall opacity via wrapper? We'll keep as is but note that glass-bg etc not used here. */
@@ -1536,33 +1536,4 @@ html {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-top: 0.3rem;
-}
-/* Dark mode background overrides */
-.dark body::before {
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:-2;
-    background:
-        radial-gradient(800px 400px at 20% 30%, rgba(100,180,255,0.15), transparent),
-        radial-gradient(600px 300px at 80% 70%, rgba(120,160,255,0.15), transparent),
-        radial-gradient(500px 250px at 40% 20%, rgba(255,255,255,0.1), transparent),
-        radial-gradient(400px 200px at 60% 80%, rgba(255,255,255,0.1), transparent),
-        radial-gradient(300px 150px at 70% 40%, rgba(150,200,255,0.12), transparent),
-        radial-gradient(200px 100px at 30% 60%, rgba(180,220,255,0.12), transparent);
-    background-size: 400% 400%;
-    animation: blobMove 18s ease-in-out infinite;
-    opacity:0.7;
-}
-.dark body::after {
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:-1;
-    background-image:
-        radial-gradient(circle at 5px 5px, var(--accent) 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.6;
 }

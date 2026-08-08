@@ -2,10 +2,10 @@
 
 A modern, interactive resume/portfolio website built for the Cloud Resume Challenge, featuring a liquid glass (glassmorphism) design with smooth animations, responsive layout, cursor interaction effects, and scroll-triggered animations.
 
-## 🌐 Live Demo
-[https://yourusername.github.io/cloud-resume-challenge/](https://](https://yourusernamegithub)
+## �� 🌐 Live Demo
+[https://yourusername.github.io/cloud-resume-challenge/](https://yourusernamegithub)
 
-## ✨ Project
+## � ✨ Project
 
 - Fully responsive design (mobile, tablet)
 - **Theme**: Glassmorphism effects with backdrop-filter, blur, transparency, and light refraction effects
@@ -19,8 +19,9 @@ A modern, interactive resume/portfolio website built for the Cloud Resume Challe
 - **Secure and hosting ready** for AWS S3/CloudFront or any static hosting
 - **Accessibility focused** with semantic HTML and ARIA labels
 - **SEO optimized** with proper meta tags and structure
+- **Performance optimized** with CSS containment, will-change properties, and reduced animation intensity
 
-## 📂 File Structure
+## �� 📂 File Structure
 
 ```
 cloud-resume-challenge/
@@ -28,25 +29,24 @@ cloud-resume-challenge/
 ├── css/
 │   └── styles.css      # All styles including glass effects, animations, responsiveness
 ├── js/
-│   ├── particles.js    # Particle background effect with cursor interaction
+│   ├── particles.js    # Intentionally left blank - using CSS blob animation instead
 │   ├── typed.js        # Typing animation for hero section
-│   └── scripts.js      # Main JavaScript functionality
+│   └── scripts.js      # Main JavaScript functionality (year init, skill animations, smooth scroll, nav highlights)
 ├── assets/
-│   ├── images/         # For future images
+│   ├── images/         # Profile image (IMG_0580.png) and future images
 │   └── fonts/          # For future custom fonts
-└── README.md           # Project documentation
+�└── README.md           # Project documentation
 ```
 
-## 💻 Technologies Used
+## �� 💻 Technologies Used
 
 - **HTML5** Semantic markup
 - **CSS3** with CSS Variables, Flexbox, Grid
 - **JavaScript** Vanilla ES6+ (no frameworks)
 - **Font Awesome** for icons
-- **Particles.js** for background effect
 - **Typed.js** for typing animation
 
-## 🎨 Design Features
+## �� 🎨 Design Features
 
 ### Liquid Glass (Glassmorphism) Effects
 - Frosted glass cards with `backdrop-filter: blur()`
@@ -58,27 +58,28 @@ cloud-resume-challenge/
 - Page load fade-in and slide-up animations
 - Scroll-triggered animations with Intersection Observer
 - Typing effect in hero section
-- Skill progress bar animations on scroll
+- Skill progress bar animations on scroll and viewport entry
 - Hover lift, glow, and shadow effects on cards
 - Cursor follower with interactive hover states
 - Ripple effect on buttons and links
 - Magnetic button effect on social links
 - Smooth scroll behavior
-- Parallax effect on header
+- Animated liquid glass background with CSS blob animation
+- Animation suspension when tab is hidden for performance
 
 ### Responsive Breakpoints
 - **Desktop**: 1200px+
 - **Tablet**: 768px - 1199px  
 - **Mobile**: < 768px
 
-## 📱 Responsive Design
+## �� 📱 Responsive Design
 
 The website follows a mobile-first approach and looks great on all devices:
 - Mobile view: Single column layout with hamburger menu
 - Tablet view: Optimized spacing and font sizes
 - Desktop view: Multi-column layouts with generous white space
 
-## 🛠️ Installation & Usage
+## �� 🛠��️ Installation & Usage
 
 1. Clone or download this repository
 2. Open `index.html` in any modern web browser
@@ -96,7 +97,7 @@ start index.html # Windows
 xdg-open index.html # Linux
 ```
 
-## 🚀 Deployment
+## �� 🚀 Deployment
 
 This site is ready for static hosting on any platform:
 
@@ -106,7 +107,7 @@ This site is ready for static hosting on any platform:
 - **AWS S3 + CloudFront**: Upload the `cloud-resume-challenge` directory
 - **Firebase Hosting**: Deploy with Firebase CLI
 
-## 📝 Content
+## �� 📝 Content
 
 All information on this website is sourced from Hasan Arnavutoğlu's professional resume (`hasanarnavutoglu-cv.pdf`):
 
@@ -143,9 +144,9 @@ Computer Engineering graduate with strong interest in information technologies, 
 - ZigZag Game - 2023
 
 ### References
-- Mutlu İmek, Bios Elektronik - Malat Manager, +90 (533) 666 43 08
+- Mutlu Şimşek, Bios Elektronik - İmalat Müdürü, +90 (533) 666 43 08
 
-## 🎯 Color Palette
+## �� 🎯 Color Palette
 
 ### Primary Colors
 - **Primary Blue**: `#0066ff`
@@ -154,7 +155,7 @@ Computer Engineering graduate with strong interest in information technologies, 
 - **Light Accent**: `#66b3ff`
 
 ### Background
-- **Dark Gradient**: `#0f0c29` → `#302b63` → `#242020`
+- **Liquid Glass Gradient**: Animated CSS blob effect with varying opacities
 - **Light Accents**: Subtle radial gradients for depth and cursor effects
 
 ### Text Colors
@@ -162,20 +163,21 @@ Computer Engineering graduate with strong interest in information technologies, 
 - **Medium Text**: `#4a5568`
 
 ### Glass Elements
-- **Background**: `rgba(255, 255, 255, 0.15)` to `rgba(255, 255, 255, 0.3)`
-- **Borders**: `rgba(255, 255, 255, 0.2)`
+- **Card Background**: `rgba(255, 255, 255, 0.55)` (light) / `rgba(0,0,0,0.4)` (dark)
+- **Glass Background**: `rgba(255,255,255,0.15)` (light) / `rgba(255,255,255,0.08)` (dark)
+- **Borders**: `rgba(255,255,255,0.2)` (light) / `rgba(255,255,255,0.12)` (dark)
 
-## 📄 License
+## �� 📄 License
 
 This project is open source and available for personal use.
 
-## 🙏 Acknowledgments
+## �� 🙏 Acknowledgments
 
 - Design inspiration: Apple's Liquid Glass aesthetic from iOS 26/macOS Tahoe
 - Cursor interaction: Inspired by pszostak.pl
 - Scroll animations: Inspired by tajmirul.site
 - Icons: Font Awesome
-- Background particles: Custom JavaScript implementation
+- Background animation: Pure CSS blob implementation (no particles.js)
 - Typography: System fonts for optimal performance
 
 ---

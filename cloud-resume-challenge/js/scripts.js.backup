@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop,
+                        top: targetElement.offsetTop - 140,
                         behavior: 'smooth'
                     });
                 }
@@ -133,7 +133,23 @@ document.addEventListener('DOMContentLoaded', function() {
         skillObserver.observe(category);
     });
 
-    // Cursor follower enhancement - Removed per user request
+    // Cursor follower enhancement
+    const cursorFollower = document.createElement('div');
+    cursorFollower.className = 'cursor-follower';
+    document.body.appendChild(cursorFollower);
+
+    document.addEventListener('mousemove', (e) => {
+        cursorFollower.style.left = e.pageX + 'px';
+        cursorFollower.style.top = e.pageY + 'px';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        cursorFollower.classList.add('active');
+    });
+
+    document.addEventListener('mouseleave', () => {
+        cursorFollower.classList.remove('active');
+    });
 
     // Animation suspension when tab is hidden
     document.addEventListener('visibilitychange', () => {
