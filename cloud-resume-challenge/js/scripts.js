@@ -25,21 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize skill animations
-    const skillBars = document.querySelectorAll('.skill-progress');
-    skillBars.forEach(bar => {
-        // Get the width from inline style or set a default
-        const width = bar.style.width || '0%';
-        // Trigger animation by temporarily removing and adding the width
-        const temp = bar.style.width;
-        bar.style.width = '0%';
-        // Force reflow
-        void bar.offsetWidth;
-        // Set the actual width after a small delay to trigger transition
-        setTimeout(() => {
-            bar.style.width = width;
-        }, 100);
-    });
 
     // Add smooth scroll to all links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -109,29 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
         revealObserver.observe(element);
     });
 
-    // Skill bar animation on viewport entry
-    const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const skillBars = entry.target.querySelectorAll('.skill-progress');
-                skillBars.forEach(bar => {
-                    const width = bar.style.width || '0%';
-                    bar.style.width = '0%';
-                    // Force reflow
-                    void bar.offsetWidth;
-                    setTimeout(() => {
-                        bar.style.width = width;
-                    }, 100);
-                });
-                // Uncomment if should animate only once
-                // skillObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('.skill-category').forEach(category => {
-        skillObserver.observe(category);
-    });
 
     // Cursor follower enhancement - Removed per user request
 
