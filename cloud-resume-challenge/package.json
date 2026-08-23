@@ -1,0 +1,15 @@
+{
+  "name": "cloud-resume-challenge",
+  "version": "1.0.0",
+  "description": "A modern, interactive resume/portfolio website built for the Cloud Resume Challenge, featuring a liquid glass (glassmorphism) design with smooth animations, responsive layout, cursor interaction effects, and scroll-triggered animations.",
+  "main": "test-todo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.62.1"
+  }
+}

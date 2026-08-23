@@ -1,4 +1,3 @@
-/* Root Variables */
 :root {
     --bg-color: #fff;
     --text-color: #1a1a3e;
@@ -62,9 +61,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    will-change: transform, background-color;
-    position: relative;
-    overflow: hidden;
 }
 
 /* Navigation Bar Styles */
@@ -112,7 +108,31 @@
     font-size: 1.2rem;
 }
 
+/* Add will-change properties for better performance */
+.nav-link,
+.social-link,
+.project-link,
+.certificate-link,
+.btn,
+.theme-toggle,
+.cv-download-btn,
+.nav-toggle {
+    will-change: transform, background-color;
+}
+
 /* Ripple Effect for Interactive Elements */
+.btn,
+.social-link,
+.project-link,
+.certificate-link,
+.nav-link,
+.theme-toggle,
+.cv-download-btn,
+.nav-toggle {
+    position: relative;
+    overflow: hidden;
+}
+
 .btn::after,
 .social-link::after,
 .project-link::after,
@@ -149,12 +169,13 @@
 
 /* Magnetic Effect for Social Links */
 .social-link {
-    transform: translateY(0) scale(1);
+    transform: translateY(-4px) scale(1.05);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: transform;
 }
 
 .social-link:hover {
-    transform: translateY(-8px) scale(1.1);
+    transform: translateY(-4px) scale(1.05);
 }
 
 /* Enhanced Card Hover */
@@ -167,6 +188,25 @@
     box-shadow: 0 12px 28px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
+
+
+/* Skip to Content Link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    z-index: 10000;
+    transition: top 0.3s ease;
+    border-radius: 0 0 8px 8px;
+    font-size: 0.9rem;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
 
 /* Responsive styles for navigation */
 @media (max-width: 768px) {
@@ -206,13 +246,14 @@ button:focus-visible,
 /* Body styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--bg-color);
+    background: transparent;
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
     transition: background-color 0.3s ease, color 0.3s ease;
+    /* Animated liquid glass background */
 }
 
 body::before {
@@ -245,15 +286,21 @@ body::after {
     opacity: 0.4;
 }
 
+/* Adjust body::before colors via variables - we can't easily vary alpha per layer, keep as is but adjust overall opacity via wrapper? We'll keep as is but note that glass-bg etc not used here. */
 @media (prefers-reduced-motion: reduce) {
-    body::before,
-    .blob {
-        animation: none !important;
+    body::before {
+        animation: none;
     }
     * {
         animation-duration: 0.001ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
+    }
+    .blob {
+        animation: none !important;
+    }
+    .skill-progress {
+        transition: none !important;
     }
 }
 
@@ -273,10 +320,75 @@ body::after {
 }
 
 /* Container */
+/* Mobile View - Hide navbar and show vertical action buttons */
+@media (max-width: 480px) {
+    .navbar {
+        display: none;
+    }
+
+    .header-actions {
+        position: absolute;
+        top: auto;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1050;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .header-actions .theme-toggle {
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        color: var(--accent);
+        transition: all 0.3s ease;
+    }
+
+    .header-actions .cv-download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 22px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0;
+        line-height: 0;
+        transition: all 0.3s ease;
+    }
+
+    .header-actions .cv-download-btn::before {
+        content: '\f019';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--accent);
+    }
+
+    .header-actions .cv-download-btn::after {
+        content: 'CV\'yi kaydet';
+        font-size: 0.85rem;
+        color: var(--accent);
+    }
+
+    .header-actions .theme-toggle:hover,
+    .header-actions .cv-download-btn:hover {
+        background: var(--hover-bg);
+        transform: translateY(-2px);
+    }
+}
 .container {
     position: relative;
     z-index: 2;
-    margin-top: 6rem;
+    margin-top: 6rem; /* Increased space for navbar */
 }
 
 /* Header */
@@ -286,10 +398,9 @@ body::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
 }
 
-/* Profile Card */
+/* Profile Card - NO CARD STYLING */
 .profile-card {
     display: flex;
     align-items: center;
@@ -393,7 +504,7 @@ body::after {
     padding: 0 2rem;
     position: relative;
     z-index: 2;
-    padding-top: 0;
+    padding-top: 0; /* Compensated by container margin-top */
 }
 
 .section {
@@ -401,28 +512,29 @@ body::after {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
-    contain: content;
+    contain: content; /* Allows browser to optimize */
 }
 
+/* Add top margin to first section to compensate for fixed navbar */
 .section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
 .section-title {
-    font-size: 2.4rem;
+    font-size: 2.4rem; /* Increased from 2.2rem */
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 3rem; /* Increased spacing */
     display: flex;
     align-items: center;
     gap: 0.8rem;
     color: var(--text-color);
     position: relative;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.5px; /* Added for better readability */
 }
 
 .section-title i {
-    font-size: 2rem;
+    font-size: 2rem; /* Increased from 1.8rem */
     background: linear-gradient(to right, var(--primary), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -438,7 +550,7 @@ body::after {
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 80px;
+    width: 80px; /* Increased from 70px */
     height: 4px;
     background: linear-gradient(to right, var(--primary), var(--accent));
     border-radius: 2px;
@@ -446,25 +558,25 @@ body::after {
 }
 
 .section-title:hover::after {
-    width: 140px;
+    width: 140px; /* Increased from 120px */
 }
 
 /* Glass Card */
 .glass-card {
     background: var(--card-bg);
-    backdrop-filter: blur(8px) saturate(110%);
+    backdrop-filter: blur(8px) saturate(110%); /* Reduced from 12px/120% for better performance */
     -webkit-backdrop-filter: blur(8px) saturate(110%);
     border: 1px solid var(--card-border);
     border-radius: 24px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.5);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.5); /* Simplified */
     padding: 2.5rem;
     margin-bottom: 2.5rem;
     transition: all 0.35s ease-out;
-    position: relative;
-    overflow: hidden;
+    position:relative;
+    overflow:hidden;
     z-index: 1;
     will-change: transform;
-    contain: layout paint;
+    contain: layout paint; /* Enable CSS containment for layout and paint, but not size */
 }
 
 .glass-card:hover {
@@ -494,18 +606,16 @@ body::after {
 .project-description,
 .description,
 .certificate-issuer {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--text-on-glass);
+    font-size: 1.1rem; /* Increased from 1.05/1.15 */
+    line-height: 1.7;  /* Optimized for readability */
+    color: var(--text-color);
     margin-bottom: 1.5rem;
 }
 
 .about-content {
-    display: block;
-}
-
-.about-content > .about-text {
-    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .personal-info {
@@ -619,6 +729,12 @@ body::after {
 
 .location i {
     color: var(--accent);
+}
+
+.description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-color);
 }
 
 /* Education Section */
@@ -832,7 +948,6 @@ body::after {
     font-weight: 600;
     color: var(--text-color);
     flex: 1;
-    word-break: break-word;
 }
 .project-date {
     background: var(--accent);
@@ -1040,66 +1155,7 @@ body::after {
     color: var(--accent);
 }
 
-/* Desktop Header Actions & Buttons */
-.theme-toggle {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-.theme-toggle:hover {
-    background: var(--accent);
-    color: white;
-    transform: scale(1.1);
-}
-.theme-toggle i {
-    font-size: 1.2rem;
-    color: var(--accent);
-}
-.dark .theme-toggle i {
-    color: white;
-}
-.theme-toggle:hover i {
-    color: white;
-}
-
-.header-actions {
-    position: absolute;
-    top: 3.5rem;
-    right: 1.5rem;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.cv-download-btn {
-    background: var(--primary);
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-decoration: none;
-    border: none;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.cv-download-btn:hover {
-    background: var(--secondary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* General Responsive Breakpoints */
+/* Responsive Design */
 @media (max-width: 1200px) {
     .container {
         padding: 0 1.5rem;
@@ -1150,140 +1206,61 @@ body::after {
 }
 @media (max-width: 768px) {
     .header {
-        padding: 3rem 1rem 1.2rem !important;
+        padding: 3rem 1rem 1.2rem;
     }
     .name {
-        font-size: 2.2rem !important;
+        font-size: 2.2rem;
     }
     .title {
-        font-size: 1.1rem !important;
+        font-size: 1.1rem;
     }
     .section-title {
-        font-size: 1.8rem !important;
+        font-size: 1.8rem;
     }
     .glass-card {
-        padding: 1.5rem !important;
+        padding: 1.5rem;
     }
     .profile-image {
-        width: 120px !important;
-        height: 120px !important;
+        width: 120px;
+        height: 120px;
     }
     .profile-card {
-        gap: 1.5rem !important;
-        max-width: 100% !important;
+        gap: 1.5rem;
+        max-width: 100%;
     }
     .profile-info {
-        text-align: left !important;
+        text-align: left;
     }
     .typing-effect {
-        justify-content: flex-start !important;
-    }
-
-    /* Mobile View - Floating action buttons (Fixed bottom-right, vertical stack, follows scroll) */
-    /* Hide navbar on mobile - super aggressive */
-    .navbar {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0 !important;
-        min-height: 0 !important;
-        overflow: hidden !important;
-        pointer-events: none !important;
-    }
-
-    /* Show and position header-actions on mobile */
-    .header .header-actions {
-        position: fixed !important;
-        /* Fixed bottom value for iPhone compatibility */
-        bottom: 20px !important;
-        right: 15px !important;
-        top: auto !important;
-        z-index: 9999 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 10px !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 50px !important;
-        height: auto !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        left: auto !important;
-        /* iOS Safari fixes */
-        -webkit-overflow-scrolling: touch !important;
-        transform: translateZ(0) !important;
-        backface-visibility: hidden !important;
-        overflow: visible !important;
-    }
-
-    /* Ensure header-actions stays above other content */
-    .header .header-actions .theme-toggle,
-    .header .header-actions .cv-download-btn {
-        position: relative !important;
-        z-index: 9999 !important;
-        -webkit-tap-highlight-color: transparent !important;
-        width: 46px !important;
-        height: 46px !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        justify-content: flex-start;
     }
 }
-
-/* Desktop styles for header-actions */
-.header-actions {
-    position: absolute;
-    top: 3.5rem;
-    right: 1.5rem;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+    border-radius: 22px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0;
+    line-height: 0;
+    transition: all 0.3s ease;
 }
 
-.header-actions .theme-toggle {
-    width: 46px;
-    height: 46px;
-    padding: 0;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--card-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+.header-actions .cv-download-btn::before {
+    content: '\f019';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 600;
+    font-size: 1rem;
     color: var(--accent);
-    transition: all 0.3s ease;
 }
 
-.header-actions .cv-download-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: var(--primary);
-    color: #ffffff;
-    border: 1px solid var(--glass-border);
-    border-radius: 25px;
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
-    line-height: 1;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.header-actions .cv-download-btn::before,
 .header-actions .cv-download-btn::after {
-    display: none;
+    content: 'CV\'yi kaydet';
+    font-size: 0.85rem;
+    color: var(--accent);
 }
 
-.header-actions .theme-toggle:active,
-.header-actions .cv-download-btn:active {
-    transform: scale(0.94);
+.header-actions .theme-toggle:hover,
+.header-actions .cv-download-btn:hover {
+    background: var(--hover-bg);
+    transform: translateY(-2px);
 }
-
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -1295,12 +1272,23 @@ body::after {
         transform: translateY(0);
     }
 }
-@keyframes blobMove {
-    0% { transform: scale(1) translate(0px, 0px); }
-    50% { transform: scale(1.1) translate(20px, -20px); }
-    100% { transform: scale(1) translate(0px, 0px); }
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
-
+/* Hover effects for cards */
+/* Removed skill progress hover animation to prevent restarts on hover */
+/* Floating animation for profile image */
+@media (hover: hover) {
+    /* Profile image animation removed to keep picture still */
+}
 /* Animated background blobs */
 .blobs {
     position: fixed;
@@ -1341,12 +1329,21 @@ body::after {
     animation-delay: -8s;
 }
 @keyframes float {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(30px, -30px) rotate(10deg); }
-    66% { transform: translate(-20px, 30px) rotate(-5deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -30px) rotate(10deg);
+    }
+    66% {
+        transform: translate(-20px, 30px) rotate(-5deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }
 
+/* Cursor Follower - Removed per user request */
 /* Print styles */
 @media print {
     body {
@@ -1384,10 +1381,72 @@ body::after {
         display: block;
         margin-top: 0.5rem;
     }
+    /* Adjust image size to better match text */
     .profile-image {
         width: 160px;
         height: 160px;
     }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+.theme-toggle:hover {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.1);
+}
+.theme-toggle i {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+.dark .theme-toggle i {
+    color: white;
+}
+.theme-toggle:hover i {
+    color: white;
+}
+
+/* Header actions container */
+.header-actions {
+    position: absolute;
+    top: 3.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* CV download button */
+.cv-download-btn {
+    background: var(--primary);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.cv-download-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Transition for theme change */
@@ -1396,6 +1455,106 @@ html {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Hide main content until approved */
+.hidden {
+    display: none;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.hero-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+.hero-actions {
+    margin-bottom: 2.5rem;
+}
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    font-size: 1rem;
+}
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    margin-right: 1rem;
+}
+.btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+.stat-card {
+    text-align: center;
+    padding: 1rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    min-width: 80px;
+}
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+    line-height: 1;
+}
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.3rem;
+}
 /* Dark mode background overrides */
 .dark body::before {
     content:"";
@@ -1424,38 +1583,4 @@ html {
         radial-gradient(circle at 5px 5px, var(--accent) 2px, transparent 2px);
     background-size: 20px 20px;
     opacity: 0.8;
-}
-
-/* Visitor Count Styles */
-.visitor-count {
-    background: var(--glass-bg);
-    backdrop-filter: blur(8px) saturate(110%);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 0.8rem 1.5rem;
-    margin: 1.5rem auto;
-    max-width: fit-content;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-color);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.5);
-    transition: all 0.3s ease;
-}
-
-.visitor-count:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
-    border-color: rgba(255,255,255,0.5);
-}
-
-.dark .visitor-count {
-    background: var(--glass-bg);
-    border-color: var(--glass-border);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
-}
-
-.dark .visitor-count:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
-    border-color: rgba(255,255,255,0.3);
 }

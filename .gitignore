@@ -1,0 +1,5 @@
+agency-agents
+.claude
+node_modules
+test-results
+playwright

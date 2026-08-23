@@ -61,12 +61,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
+            // Add fallback to prevent removing all active classes
+            if (current) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
         });
     }
 
@@ -113,4 +116,21 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    // Visitor count from API
+    const apiUrl = "https://6jtfklgftj.execute-api.us-east-1.amazonaws.com/prod";
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Ağ yanıtı düzgün değil");
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById("ziyaretci-sayaci").innerText = data.ziyaretci_sayisi;
+        })
+        .catch(error => {
+            console.error("Sayaç verisi çekilirken hata oluştu:", error);
+            document.getElementById("ziyaretci-sayaci").innerText = "Sayılmıyor";
+        });
 });

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasan Arnavutoğlu - Yeni Mezun Bilgisayar Mühendisi</title>
     <meta name="description" content="Hasan Arnavutoğlu'nın profesyonel CV/Resume websitesi. Bilgisayar mühendisi, yapay zeka, sistem yönetimi ve yazılım geliştirme uzmanı.">
-    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -17,15 +17,14 @@
     <!-- Main Container -->
     <div class="container">
         <!-- Header -->
-        <header class="header" role="banner">
+        <header class="header">
             <div class="profile-card">
                 <div class="profile-image">
                     <img src="assets/images/IMG_0580.png"
-                         srcset="assets/images/IMG_0580.png 400w, assets/images/IMG_0580.png 800w"
-                         sizes="(max-width: 600px) 100vw, 50vw"
+                         srcset="assets/images/IMG_0580.png 1x, assets/images/IMG_0580.png 2x"
+                         sizes="(max-width: 768px) 100px, (max-width: 480px) 80px, 140px"
                          alt="Hasan Arnavutoğlu Profil Fotoğrafı"
-                         class="profile-img"
-                         loading="lazy">
+                         class="profile-img">
                 </div>
                 <div class="profile-info">
                     <h1 class="name">Hasan Arnavutoğlu</h1>
@@ -45,7 +44,7 @@
         </header>
 
         <!-- Navigation Bar -->
-        <nav class="navbar" aria-label="Main navigation" role="navigation">
+        <nav class="navbar" aria-label="Main navigation">
             <ul class="nav-list">
                 <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> Hakkımda</a></li>
                 <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Deneyim</a></li>
@@ -60,7 +59,7 @@
 
 
         <!-- Main Content -->
-        <main class="main-content" role="main">
+        <main class="main-content">
             <!-- About Section -->
             <section class="section about-section" id="about" aria-label="Hakkımda bölümü">
                 <h2 class="section-title"><i class="fas fa-user"></i> Hakkımda</h2>
@@ -78,7 +77,7 @@
                                     <span><strong>Doğum Tarihi:</strong> 17/11/2001</span>
                                 </div>
                                 <div class="info-item">
-                                    <i class="fas fa-user-alt"></i>
+                                    <i class="fas fa-user-alt fa-user-alt"></i>
                                     <span><strong>Medeni Durum:</strong> Bekar</span>
                                 </div>
                                 <div class="info-item">
@@ -281,7 +280,6 @@
                         <div class="project-body">
                             <p class="project-description">
                                 QR etiketleri ile yeni bir iletişim çözümü. QR etiketleri oluşturun ve yönetin. Ardından etiketleri tarayarak mesaj bırakın veya bilgi paylaşın. (Flutter / Firebase)
-                            </p>
                             
                             </p>
                              <div class="project-tags">
@@ -370,7 +368,6 @@
                             <i class="fab fa-linkedin"></i>
                         </a>
                     </div>
-                    </div>
                 </div>
             </section>
 
@@ -389,9 +386,6 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="visitor-count">
-                Ziyaretçi Sayısı: <span id="ziyaretci-sayaci">Yükleniyor...</span>
-            </div>
             <p>&copy; <span id="year"></span> Hasan Arnavutoğlu. Tüm hakları saklıdır.</p>
         </footer>
     </div>

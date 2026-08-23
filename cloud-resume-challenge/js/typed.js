@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cursorSpan = document.querySelector('.cursor');
 
     const textArray = [
-        "Yeni Mezun Bilgisayar Mühendisi",
+        "Bilgisayar Mühendisi",
         "Yapay Zeka Meraklısı",
         "Sistem Uzmanı",
         "Yazılım Geliştirici"
