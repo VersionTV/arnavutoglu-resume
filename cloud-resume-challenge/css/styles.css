@@ -1228,6 +1228,58 @@ body::after {
     }
 }
 
+/* Additional mobile fixes for very small screens */
+@media (max-width: 480px) {
+    .profile-image {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .name {
+        font-size: 1.8rem !important;
+    }
+
+    .title {
+        font-size: 1rem !important;
+    }
+
+    .header {
+        padding: 2.5rem 1rem 1rem !important;
+    }
+
+    .glass-card {
+        padding: 1rem !important;
+    }
+
+    .contact-section {
+        padding: 2rem 0 !important;
+    }
+
+    .contact-info {
+        min-width: unset !important;
+        width: 100% !important;
+        padding: 1.5rem !important;
+    }
+
+    .contact-container {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+
+    .social-links {
+        width: 100% !important;
+        gap: 1rem !important;
+        margin-top: 1rem !important;
+        justify-content: center !important;
+    }
+
+    .social-link {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1.4rem !important;
+    }
+}
+
 /* Desktop styles for header-actions */
 .header-actions {
     position: absolute;
