@@ -27,6 +27,16 @@
     box-sizing: border-box;
 }
 
+/* Language Toggle Styles */
+.language-toggle .lang-label {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-width: 1.2rem;
+    text-align: center;
+}
+
 .dark {
     --bg-color: #0a0a0a;
     --text-color: #e0e0e0;
@@ -1041,7 +1051,8 @@ body::after {
 }
 
 /* Desktop Header Actions & Buttons */
-.theme-toggle {
+.theme-toggle,
+.language-toggle {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: 50%;
@@ -1054,19 +1065,23 @@ body::after {
     transition: all 0.3s ease;
     z-index: 10;
 }
-.theme-toggle:hover {
+.theme-toggle:hover,
+.language-toggle:hover {
     background: var(--accent);
     color: white;
     transform: scale(1.1);
 }
-.theme-toggle i {
+.theme-toggle i,
+.language-toggle img {
     font-size: 1.2rem;
     color: var(--accent);
 }
-.dark .theme-toggle i {
+.dark .theme-toggle i,
+.dark .language-toggle img {
     color: white;
 }
-.theme-toggle:hover i {
+.theme-toggle:hover i,
+.language-toggle:hover img {
     color: white;
 }
 

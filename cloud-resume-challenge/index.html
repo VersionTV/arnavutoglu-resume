@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" data-lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasan Arnavutoğlu - Yeni Mezun Bilgisayar Mühendisi</title>
-    <meta name="description" content="Hasan Arnavutoğlu'nın profesyonel CV/Resume websitesi. Bilgisayar mühendisi, yapay zeka, sistem yönetimi ve yazılım geliştirme uzmanı.">
+    <title data-en='Hasan Arnavutoğlu - Recent Computer Engineering Graduate' data-tr='Hasan Arnavutoğlu - Yeni Mezun Bilgisayar Mühendisi'>Hasan Arnavutoğlu - Yeni Mezun Bilgisayar Mühendisi</title>
+    <meta name="description" data-en='Hasan Arnavutoğlu\'s professional CV/Resume website. Computer engineer, AI enthusiast, systems administration and software development expert.' data-tr='Hasan Arnavutoğlu\'nın profesyonel CV/Resume websitesi. Bilgisayar mühendisi, yapay zeka, sistem yönetimi ve yazılım geliştirme uzmanı.' content='Hasan Arnavutoğlu\'nın profesyonel CV/Resume websitesi. Bilgisayar mühendisi, yapay zeka, sistem yönetimi ve yazılım geliştirme uzmanı.'>
     <link rel="stylesheet" href="css/styles.css?v=3">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -23,13 +23,14 @@
                     <img src="assets/images/IMG_0580.png"
                          srcset="assets/images/IMG_0580.png 400w, assets/images/IMG_0580.png 800w"
                          sizes="(max-width: 600px) 100vw, 50vw"
-                         alt="Hasan Arnavutoğlu Profil Fotoğrafı"
+                         alt="Hasan Arnavutoğlu Profile Picture"
+                         data-en-alt="Hasan Arnavutoğlu Profile Picture"
                          class="profile-img"
                          loading="lazy">
                 </div>
                 <div class="profile-info">
-                    <h1 class="name">Hasan Arnavutoğlu</h1>
-                    <p class="title">Yeni Mezun Bilgisayar Mühendisi</p>
+                    <h1 class="name" data-en='Hasan Arnavutoğlu' data-tr='Hasan Arnavutoğlu'>Hasan Arnavutoğlu</h1>
+                    <p class="title" data-en='Recent Computer Engineering Graduate' data-tr='Yeni Mezun Bilgisayar Mühendisi'>Yeni Mezun Bilgisayar Mühendisi</p>
                     <div class="typing-effect">
                         <span class="typed-text"></span>
                         <span class="cursor">|</span>
@@ -40,21 +41,23 @@
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
                     <i class="fas fa-moon"></i>
                 </button>
-                <a href="hasanarnavutoglu-cv.pdf" class="btn btn-outline cv-download-btn" download>CV'yi PDF olarak İndir</a>
+                <button id="language-toggle" class="language-toggle" aria-label="Toggle language">
+                </button>
+                <a href="hasanarnavutoglu-cv.pdf" class="btn btn-outline cv-download-btn" download data-en='Download CV as PDF' data-tr='CVyi PDF olarak İndir'>CV'yi PDF olarak İndir</a>
             </div>
         </header>
 
         <!-- Navigation  Bar -->
         <nav class="navbar" aria-label="Main navigation" role="navigation">
             <ul class="nav-list">
-                <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> Hakkımda</a></li>
-                <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Deneyim</a></li>
-                <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i> Eğitim</a></li>
-                <li><a href="#skills" class="nav-link"><i class="fas fa-tools"></i> Yetenekler</a></li>
-                <li><a href="#certificates" class="nav-link"><i class="fas fa-certificate"></i> Sertifikalar</a></li>
-                <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projeler</a></li>
-                <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> İletişim</a></li>
-                <li><a href="#references" class="nav-link"><i class="fas fa-address-card"></i> Referanslar</a></li>
+                <li><a href="#about" class="nav-link" data-en='<i class="fas fa-user"></i> About' data-tr='<i class="fas fa-user"></i> Hakkımda'><i class="fas fa-user"></i> Hakkımda</a></li>
+                <li><a href="#experience" class="nav-link" data-en='<i class="fas fa-briefcase"></i> Experience' data-tr='<i class="fas fa-briefcase"></i> Deneyim'><i class="fas fa-briefcase"></i> Deneyim</a></li>
+                <li><a href="#education" class="nav-link" data-en='<i class="fas fa-graduation-cap"></i> Education' data-tr='<i class="fas fa-graduation-cap"></i> Eğitim'><i class="fas fa-graduation-cap"></i> Eğitim</a></li>
+                <li><a href="#skills" class="nav-link" data-en='<i class="fas fa-tools"></i> Skills' data-tr='<i class="fas fa-tools"></i> Yetenekler'><i class="fas fa-tools"></i> Yetenekler</a></li>
+                <li><a href="#certificates" class="nav-link" data-en='<i class="fas fa-certificate"></i> Certificates' data-tr='<i class="fas fa-certificate"></i> Sertifikalar'><i class="fas fa-certificate"></i> Sertifikalar</a></li>
+                <li><a href="#projects" class="nav-link" data-en='<i class="fas fa-project-diagram"></i> Projects' data-tr='<i class="fas fa-project-diagram"></i> Projeler'><i class="fas fa-project-diagram"></i> Projeler</a></li>
+                <li><a href="#contact" class="nav-link" data-en='<i class="fas fa-envelope"></i> Contact' data-tr='<i class="fas fa-envelope"></i> İletişim'><i class="fas fa-envelope"></i> İletişim</a></li>
+                <li><a href="#references" class="nav-link" data-en='<i class="fas fa-address-card"></i> References' data-tr='<i class="fas fa-address-card"></i> Referanslar'><i class="fas fa-address-card"></i> Referanslar</a></li>
             </ul>
         </nav>
 
@@ -63,37 +66,37 @@
         <main class="main-content" role="main">
             <!-- About Section -->
             <section class="section about-section" id="about" aria-label="Hakkımda bölümü">
-                <h2 class="section-title"><i class="fas fa-user"></i> Hakkımda</h2>
+                <h2 class="section-title" data-en='<i class="fas fa-user"></i> About' data-tr='<i class="fas fa-user"></i> Hakkımda'><i class="fas fa-user"></i> Hakkımda</h2>
                 <div class="glass-card">
                     <div class="about-content">
-                        <p class="about-text">
+                        <p class="about-text" data-en="I am a recent Computer Engineering graduate. I am interested in information technologies and aim to continuously improve myself in this field. I have basic knowledge of system administration, network structures, and software technologies. Additionally, I aim to expand my knowledge by gaining experience in fields such as cyber security, robotic systems, and artificial intelligence. I am someone who enjoys research, learning, and teamwork. I previously contributed to the development of an artificial intelligence model by working on a search engine quality evaluation project." data-tr="Bilgisayar Mühendisi yeni mezunuyum. Bilişim teknolojileri alanına ilgi duyuyorum ve bu alanda kendimi sürekli geliştirmeyi hedefliyorum. Sistem yönetimi, ağ yapıları ve yazılım teknolojileri konularında temel bilgiye sahibim. Ayrıca siber güvenlik, robotik sistemler ve yapay zeka gibi alanlarda deneyim kazanarak bilgi birikimimi genişletmeyi amaçlıyorum. Araştırmayı, öğrenmeyi ve ekip çalışmasını seven biriyim. Daha önce arama motoru kalite değerlendirme projesinde görev alarak bir yapay zeka modelinin geliştirilmesine katkı sağladım.">
                             Bilgisayar Mühendisi yeni mezunuyum. Bilişim teknolojileri alanına ilgi duyuyorum ve bu alanda kendimi sürekli geliştirmeyi hedefliyorum. Sistem yönetimi, ağ yapıları ve yazılım teknolojileri konularında temel bilgiye sahibim. Ayrıca siber güvenlik, robotik sistemler ve yapay zeka gibi alanlarda deneyim kazanarak bilgi birikimimi genişletmeyi amaçlıyorum. Araştırmayı, öğrenmeyi ve ekip çalışmasını seven biriyim. Daha önce arama motoru kalite değerlendirme projesinde görev alarak bir yapay zeka modelinin geliştirilmesine katkı sağladım.
                         </p>
 
                         <div class="personal-info">
-                            <h3 class="info-title">Kişisel Bilgiler</h3>
+                            <h3 class="info-title" data-en='Personal Information' data-tr='Kişisel Bilgiler'>Kişisel Bilgiler</h3>
                             <div class="info-grid">
-                                <div class="info-item">
+                                <div class="info-item" data-en='<i class="fas fa-calendar-alt"></i><span><strong>Birth Date:</strong> 17/11/2001</span>' data-tr='<i class="fas fa-calendar-alt"></i><span><strong>Doğum Tarihi:</strong> 17/11/2001</span>'>
                                     <i class="fas fa-calendar-alt"></i>
                                     <span><strong>Doğum Tarihi:</strong> 17/11/2001</span>
                                 </div>
-                                <div class="info-item">
+                                <div class="info-item" data-en='<i class="fas fa-user-alt"></i><span><strong>Marital Status:</strong> Single</span>' data-tr='<i class="fas fa-user-alt"></i><span><strong>Medeni Durum:</strong> Bekar</span>'>
                                     <i class="fas fa-user-alt"></i>
                                     <span><strong>Medeni Durum:</strong> Bekar</span>
                                 </div>
-                                <div class="info-item">
+                                <div class="info-item" data-en='<i class="fas fa-concierge-bell"></i><span><strong>Military Service:</strong> Completed</span>' data-tr='<i class="fas fa-concierge-bell"></i><span><strong>Askerlik Durumu:</strong> Tamamlandı</span>'>
                                     <i class="fas fa-concierge-bell"></i>
                                     <span><strong>Askerlik Durumu:</strong> Tamamlandı</span>
                                 </div>
-                                <div class="info-item">
+                                <div class="info-item" data-en='<span class="flag-icons">🇹🇷🇪🇺</span><span><strong>Citizenship:</strong> Turkish and EU Citizen</span>' data-tr='<span class="flag-icons">🇹🇷🇪🇺</span><span><strong>Uyruk:</strong> T.C. ve AB Vatandaşı</span>'>
                                     <span class="flag-icons">🇹🇷🇪🇺</span>
                                     <span><strong>Uyruk:</strong> T.C. ve AB Vatandaşı</span>
                                 </div>
-                                <div class="info-item">
+                                <div class="info-item" data-en='<i class="fas fa-map-marker-alt"></i><span><strong>Birth Place:</strong> Istanbul</span>' data-tr='<i class="fas fa-map-marker-alt"></i><span><strong>Doğum Yeri:</strong> İstanbul</span>'>
                                     <i class="fas fa-map-marker-alt"></i>
                                     <span><strong>Doğum Yeri:</strong> İstanbul</span>
                                 </div>
-                                <div class="info-item">
+                                <div class="info-item" data-en='<i class="fas fa-car-side"></i><span><strong>Drivers License:</strong> B (2021)</span>' data-tr='<i class="fas fa-car-side"></i><span><strong>Sürücü Belgesi:</strong> B (2021)</span>'>
                                     <i class="fas fa-car-side"></i>
                                     <span><strong>Sürücü Belgesi:</strong> B (2021)</span>
                                 </div>
@@ -105,31 +108,31 @@
 
             <!-- Experience Section -->
             <section class="section experience-section" id="experience" aria-label="İş Deneyimi bölümü">
-                <h2 class="section-title"><i class="fas fa-briefcase"></i> İş Deneyimi</h2>
+                <h2 class="section-title" data-en='<i class="fas fa-briefcase"></i> Experience' data-tr='<i class="fas fa-briefcase"></i> İş Deneyimi'><i class="fas fa-briefcase"></i> İş Deneyimi</h2>
 
                 <div class="experience-card glass-card">
                     <div class="experience-header">
                         <h3 class="company">Gini Talent</h3>
-                        <span class="date">Eylül 2024 - Ağustos 2025</span>
+                        <span class="date" data-en="September 2024 - August 2025" data-tr="Eylül 2024 - Ağustos 2025">Eylül 2024 - Ağustos 2025</span>
                     </div>
                     <div class="experience-body">
-                        <h4 class="position">Arama Motoru Kalite Geliştirme Uzmanı</h4>
-                        <p class="location">Uzaktan</p>
-                        <p class="description">
+                        <h4 class="position" data-en='Search Engine Quality Development Specialist' data-tr='Arama Motoru Kalite Geliştirme Uzmanı'>Arama Motoru Kalite Geliştirme Uzmanı</h4>
+                        <p class="location" data-en='Remote' data-tr='Uzaktan'>Uzaktan</p>
+                        <p class="description" data-en='I was responsible for evaluating and improving the results of a leading search engine in terms of accuracy and reliability. At the same time, I contributed to the training of the AI model through data labeling studies in English.' data-tr='Sektör lideri bir arama motorunun sonuçlarını doğruluk, güvenilirlik yönünden değerlendirip iyileştirmekten sorumluydum. Aynı zamanda İngilizce dilinde veri etiketleme çalışmalarıyla yapay zeka modelinin eğitimine katki sağladım.'>
                             Sektör lideri bir arama motorunun sonuçlarını doğruluk, güvenilirlik yönünden değerlendirip iyileştirmekten sorumluydum. Aynı zamanda İngilizce dilinde veri etiketleme çalışmalarıyla yapay zeka modelinin eğitimine katki sağladım.
                         </p>
                     </div>
                 </div>
 
-                <div class="experience-card glass-card">
+                <div class="experience glass-card">
                     <div class="experience-header">
-                        <h3 class="company">BIOS Elektronik</h3>
-                        <span class="date">2022</span>
+                        <h3 class="company" data-en='BIOS Electronics' data-tr='BIOS Elektronik'>BIOS Elektronik</h3>
+                        <span class="date" data-en="2022" data-tr="2022">2022</span>
                     </div>
                     <div class="experience-body">
-                        <h4 class="position">Stajyer</h4>
-                        <p class="location">İstanbul</p>
-                        <p class="description">
+                        <h4 class="position" data-en='Intern' data-tr='Stajyer'>Stajyer</h4>
+                        <p class="location" data-en='Istanbul' data-tr='İstanbul'>İstanbul</p>
+                        <p class="description" data-en='In this internship where I learned basic electronics knowledge, I was responsible for tasks such as component identification, measurement and control, device programming, PIC loading, adjustments, and device testing.' data-tr='Temel elektronik bilgisini öğrendiğim bu stajda, komponentler tanımı, ölçüm ve kontrol, cihaz programlama, PIC atma, ayarlamalar ve cihazların testi gibi işlerden sorumluydum..'>
                             Temel elektronik bilgisini öğrendiğim bu stajda, komponentler tanımı, ölçüm ve kontrol, cihaz programlama, PIC atma, ayarlamalar ve cihazların testi gibi işlerden sorumluydum..
                         </p>
                     </div>
@@ -138,27 +141,27 @@
 
             <!-- Education Section -->
             <section class="section education-section" id="education" aria-label="Eğitim bölümü">
-                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Eğitim</h2>
+                <h2 class="section-title" data-en='<i class="fas fa-graduation-cap"></i> Education' data-tr='<i class="fas fa-graduation-cap"></i> Eğitim'><i class="fas fa-graduation-cap"></i> Eğitim</h2>
                 <div class="education-container">
                     <div class="education-card glass-card">
                         <div class="education-header">
-                            <h3 class="institution">Tekirdağ Namık Kemal Üniversitesi</h3>
-                            <span class="date">2020 - 2024</span>
+                            <h3 class="institution" data-en="Tekirdağ Namık Kemal University" data-tr="Tekirdağ Namık Kemal Üniversitesi">Tekirdağ Namık Kemal Üniversitesi</h3>
+                            <span class="date" data-en="2020 - 2024" data-tr="2020 - 2024">2020 - 2024</span>
                         </div>
                         <div class="education-body">
-                            <h4 class="degree">Bilgisayar Mühendisliği</h4>
-                            <p class="gpa gpa-highlight">GNO: 3.39/4</p>
+                            <h4 class="degree" data-en='Computer Engineering' data-tr='Bilgisayar Mühendisliği'>Bilgisayar Mühendisliği</h4>
+                            <p class="gpa gpa-highlight" data-en='GPA: 3.39/4' data-tr='GNO: 3.39/4'>GNO: 3.39/4</p>
                         </div>
                     </div>
 
                     <div class="education-card glass-card">
                         <div class="education-header">
-                            <h3 class="institution">Okyanus Koleji Mimarsinan Anadolu Lisesi</h3>
-                            <span class="date">Sayısal</span>
+                            <h3 class="institution" data-en='Okyanus College Mimarsinan Anatolian High School' data-tr='Okyanus Koleji Mimarsinan Anadolu Lisesi'>Okyanus Koleji Mimarsinan Anadolu Lisesi</h3>
+                            <span class="date" data-en='Science' data-tr='Sayısal'>Sayısal</span>
                         </div>
                         <div class="education-body">
-                            <h4 class="degree">Lise Diploması</h4>
-                            <p class="gpa gpa-highlight">96,87/100</p>
+                            <h4 class="degree" data-en='High School Diploma' data-tr='Lise Diploması'>Lise Diploması</h4>
+                            <p class="gpa gpa-highlight" data-en='96,87/100' data-tr='96,87/100'>96,87/100</p>
                         </div>
                     </div>
                 </div>
@@ -166,13 +169,13 @@
 
             <!-- Skills Section -->
             <section class="section skills-section" id="skills" aria-label="Yetenekler bölümü">
-                <h2 class="section-title"><i class="fas fa-tools"></i> Yetenekler</h2>
+                <h2 class="section-title" data-en='<i class="fas fa-tools"></i> Skills' data-tr='<i class="fas fa-tools"></i> Yetenekler'><i class="fas fa-tools"></i> Yetenekler</h2>
                <div class="glass-card">
     <div class="skills-content">
         
         <!-- 1. Kategori: Temel Teknolojiler -->
         <div class="skills-category">
-            <h3 class="category-title"><i class="fas fa-code"></i> Temel Teknolojiler</h3>
+            <h3 class="category-title" data-en='<i class="fas fa-code"></i> Core Technologies'><i class="fas fa-code"></i> Temel Teknolojiler</h3>
             <ul class="skills-list">
                 <li><strong>Python</strong></li>
                 <li><strong>C#</strong></li>
@@ -182,33 +185,33 @@
 
         <!-- 2. Kategori: Geliştirme Araçları ve Pratikleri -->
         <div class="skills-category">
-            <h3 class="category-title"><i class="fas fa-tools"></i> Geliştirme Araçları ve Pratikleri</h3>
+            <h3 class="category-title" data-en='<i class="fas fa-tools"></i> Development Tools and Practices'><i class="fas fa-tools"></i> Geliştirme Araçları ve Pratikleri</h3>
             <ul class="skills-list">
-                <li><strong>Git & GitHub</strong> - Versiyon kontrolü, GitHub Actions ile CI/CD otomasyonu</li>
-                <li><strong>Docker & Docker Compose</strong> - Konteyner mimarisi, ortam tutarlılığı ve dağıtım</li>
-                <li><strong>Linux / Ubuntu</strong> - Sistem yönetimi, sanallaştırma ve komut satırı yetkinliği</li>
-                <li><strong>AWS</strong> - Bulut platformları ve ölçeklenebilir altyapı yönetimi</li>
-                <li><strong>Nginx</strong> - Yük dengeleme (Load Balancing) ve web sunucu yapılandırması</li>
+                <li data-en='<strong>Git & GitHub</strong> - Version control, CI/CD automation with GitHub Actions' data-tr='<strong>Git & GitHub</strong> - Versiyon kontrolü, GitHub Actions ile CI/CD otomasyonu'><strong>Git & GitHub</strong> - Versiyon kontrolü, GitHub Actions ile CI/CD otomasyonu</li>
+                <li data-en='<strong>Docker & Docker Compose</strong> - Container architecture, environmental consistency and deployment' data-tr='<strong>Docker & Docker Compose</strong> - Konteyner mimarisi, ortam tutarlılığı ve dağıtım'><strong>Docker & Docker Compose</strong> - Konteyner mimarisi, ortam tutarlılığı ve dağıtım</li>
+                <li data-en='<strong>Linux / Ubuntu</strong> - System administration, virtualization and command line proficiency' data-tr='<strong>Linux / Ubuntu</strong> - Sistem yönetimi, sanallaştırma ve komut satırı yetkinliği'><strong>Linux / Ubuntu</strong> - Sistem yönetimi, sanallaştırma ve komut satırı yetkinliği</li>
+                <li data-en='<strong>AWS</strong> - Cloud platforms and scalable infrastructure management' data-tr='<strong>AWS</strong> - Bulut platformları ve ölçeklenebilir altyapı yönetimi'><strong>AWS</strong> - Bulut platformları ve ölçeklenebilir altyapı yönetimi</li>
+                <li data-en='<strong>Nginx</strong> - Load balancing and web server configuration' data-tr='<strong>Nginx</strong> - Yük dengeleme (Load Balancing) ve web sunucu yapılandırması'><strong>Nginx</strong> - Yük dengeleme (Load Balancing) ve web sunucu yapılandırması</li>
             </ul>
         </div>
 
         <!-- 3. Kategori: Metodolojiler ve Yaklaşımlar -->
         <div class="skills-category">
-            <h3 class="category-title"><i class="fas fa-lightbulb"></i> Metodolojiler ve Yaklaşımlar</h3>
+            <h3 class="category-title" data-en='<i class="fas fa-lightbulb"></i> Methodologies and Approaches'><i class="fas fa-lightbulb"></i> Metodolojiler ve Yaklaşımlar</h3>
             <ul class="skills-list">
-                <li><strong>Sistem ve Sunucu Yönetimi</strong> - Sunucu yapılandırması, ağ yönetimi ve bakım</li>
-                <li><strong>Ağ Yapıları (Networking)</strong> - Ağ tasarımı, yerel IP yapılandırmaları ve sorun giderme</li>
-                <li><strong>Yazılım Testi ve Otomasyon</strong> - Kalite güvencesi, güvenilir kod ve otomatik test süreçleri</li>
-                <li><strong>Problem Çözme (Troubleshooting)</strong> - Donanım/yazılım analizi ve hızlı çözüm üretme</li>
+                <li data-en='<strong>Server and System Management</strong> - Server configuration, network management and maintenance' data-tr='<strong>Sistem ve Sunucu Yönetimi</strong> - Sunucu yapılandırması, ağ yönetimi ve bakım'><strong>Sistem ve Sunucu Yönetimi</strong> - Sunucu yapılandırması, ağ yönetimi ve bakım</li>
+                <li data-en='<strong>Network Structures (Networking)</strong> - Network design, local IP configuration and troubleshooting' data-tr='<strong>Ağ Yapıları (Networking)</strong> - Ağ tasarımı, yerel IP yapılandırmaları ve sorun giderme'><strong>Ağ Yapıları (Networking)</strong> - Ağ tasarımı, yerel IP yapılandırmaları ve sorun giderme</li>
+                <li data-en='<strong>Software Testing and Automation</strong> - Quality assurance, reliable code and automated test processes' data-tr='<strong>Yazılım Testi ve Otomasyon</strong> - Kalite güvencesi, güvenilir kod ve otomatik test süreçleri'><strong>Yazılım Testi ve Otomasyon</strong> - Kalite güvencesi, güvenilir kod ve otomatik test süreçleri</li>
+                <li data-en='<strong>Problem Solving (Troubleshooting)</strong> - Hardware/software analysis and rapid solution production' data-tr='<strong>Problem Çözme (Troubleshooting)</strong> - Donanım/yazılım analizi ve hızlı çözüm üretme'><strong>Problem Çözme (Troubleshooting)</strong> - Donanım/yazılım analizi ve hızlı çözüm üretme</li>
             </ul>
         </div>
         <!-- 4. Kategori: Yapay Zeka ve Modern Geliştirme -->
         <div class="skills-category">
-            <h3 class="category-title"><i class="fas fa-robot"></i> Yapay Zeka ve Modern Geliştirme</h3>
+            <h3 class="category-title" data-en='<i class="fas fa-robot"></i> Artificial Intelligence and Modern Development'><i class="fas fa-robot"></i> Yapay Zeka ve Modern Geliştirme</h3>
             <ul class="skills-list">
-                <li><strong>Üretken Yapay Zeka Araçları</strong> - Gemini, Veo ve Flow kullanımı ile iş akışı optimizasyonu</li>
-                <li><strong>MaaS (Model-as-a-Service)</strong> - Bulut tabanlı yapay zeka modellerinin entegrasyonu ve yönetimi</li>
-                <li><strong>Vibe Coding & Prompt Engineering</strong> - Yapay zeka asistanları ile etkileşimli, hızlı kod geliştirme ve problem çözme süreçleri</li>
+                <li data-en='<strong>Generative AI Tools</strong> - Gemini, Veo and Flow usage for workflow optimization' data-tr='<strong>Üretken Yapay Zeka Araçları</strong> - Gemini, Veo ve Flow kullanımı ile iş akışı optimizasyonu'><strong>Üretken Yapay Zeka Araçları</strong> - Gemini, Veo ve Flow kullanımı ile iş akışı optimizasyonu</li>
+                <li data-en='<strong>MaaS (Model-as-a-Service)</strong> - Integration and management of cloud-based AI models' data-tr='<strong>MaaS (Model-as-a-Service)</strong> - Bulut tabanlı yapay zeka modellerinin entegrasyonu ve yönetimi'><strong>MaaS (Model-as-a-Service)</strong> - Bulut tabanlı yapay zeka modellerinin entegrasyonu ve yönetimi</li>
+                <li data-en='<strong>Vibe Coding & Prompt Engineering</strong> - AI assistants for interactive, rapid code development and problem solving' data-tr='<strong>Vibe Coding & Prompt Engineering</strong> - Yapay zeka asistanları ile etkileşimli, hızlı kod geliştirme ve problem çözme süreçleri'><strong>Vibe Coding & Prompt Engineering</strong> - Yapay zeka asistanları ile etkileşimli, hızlı kod geliştirme ve problem çözme süreçleri</li>
             </ul>
         </div>
 
@@ -218,16 +221,16 @@
 
             <!-- Certific ates Section -->
             <section class="section certificates-section" id="certificates" aria-label="Sertifikalar bölümü">
-                <h2 class="section-title"><i class="fas fa-certificate"></i> Sertifikalar</h2>
+                <h2 class="section-title" data-en='<i class="fas fa-certificate"></i> Certificates' data-tr='<i class="fas fa-certificate"></i> Sertifikalar'><i class="fas fa-certificate"></i> Sertifikalar</h2>
                 <div class="certificates-container">
                     <div class="certificate-card glass-card">
                         <div class="certificate-header">
-                            <h3 class="certificate-title">Game Developer Eğitimi</h3>
-                            <span class="certificate-date">2023</span>
+                            <h3 class="certificate-title" data-en='Game Developer Training' data-tr='Game Developer Eğitimi'>Game Developer Eğitimi</h3>
+                            <span class="certificate-date" data-en='2023' data-tr='2023'>2023</span>
                         </div>
                         <div class="certificate-body">
-                            <p class="certificate-issuer">İstanbul Ticaret Odası Softito Yazılım ve Bilişim Akademisi</p>
-                            <a href="https://softito.com.tr/" target="_blank" class="certificate-link">
+                            <p class="certificate-issuer" data-en='Istanbul Chamber of Commerce Softito Software and IT Academy' data-tr='İstanbul Ticaret Odası Softito Yazılım ve Bilişim Akademisi'>İstanbul Ticaret Odası Softito Yazılım ve Bilişim Akademisi</p>
+                            <a href="https://softito.com.tr/" target="_blank" class="certificate-link" data-en='<i class="fas fa-external-link-alt"></i> View Certificate' data-tr='<i class="fas fa-external-link-alt"></i> Belgeyi Görüntüle'>
                                 <i class="fas fa-external-link-alt"></i> Belgeyi Görüntüle
                             </a>
                         </div>
@@ -235,12 +238,12 @@
 
                     <div class="certificate-card glass-card">
                         <div class="certificate-header">
-                            <h3 class="certificate-title">Veri Analizi Okulu: Yapay Zeka ve Makine Öğrenmesi</h3>
-                            <span class="certificate-date">Ekim 2025 - Mayıs 2026</span>
+                            <h3 class="certificate-title" data-en='Data Analysis School: Artificial Intelligence and Machine Learning' data-tr='Veri Analizi Okulu: Yapay Zeka ve Makine Öğrenmesi'>Veri Analizi Okulu: Yapay Zeka ve Makine Öğrenmesi</h3>
+                            <span class="certificate-date" data-en='October 2025 - May 2026' data-tr='Ekim 2025 - Mayıs 2026'>Ekim 2025 - Mayıs 2026</span>
                         </div>
                         <div class="certificate-body">
-                            <p class="certificate-issuer">7 aylık kapsamli online eğitim programi. Marmara, ODTÜ, Boğaziçi ve TÜBİTAK ile organize ediliyor.</p>
-                            <a href="https://verianaliziokulu.com/" target="_blank" class="certificate-link">
+                            <p class="certificate-issuer" data-en='7-month comprehensive online education program. Organized with Marmara, ODTÜ, Boğaziçi and TÜBİTAK.' data-tr='7 aylık kapsamli online eğitim programi. Marmara, ODTÜ, Boğaziçi ve TÜBİTAK ile organize ediliyor.'>7 aylık kapsamli online eğitim programi. Marmara, ODTÜ, Boğaziçi ve TÜBİTAK ile organize ediliyor.</p>
+                            <a href="https://verianaliziokulu.com/" target="_blank" class="certificate-link" data-en='<i class="fas fa-external-link-alt"></i> Program Website' data-tr='<i class="fas fa-external-link-alt"></i> Program Websitesi'>
                                 <i class="fas fa-external-link-alt"></i> Program Websitesi
                             </a>
                         </div>
@@ -250,15 +253,15 @@
 
             <!-- Projects Section -->
             <section class="section projects-section" id="projects" aria-label="Projeler bölümü">
-                <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projeler</h2>
+                <h2 class="section-title" data-en='<i class="fas fa-project-diagram"></i> Projects' data-tr='<i class="fas fa-project-diagram"></i> Projeler'><i class="fas fa-project-diagram"></i> Projeler</h2>
                 <div class="projects-grid">
                     <div class="project-card glass-card">
                         <div class="project-header">
-                            <h3 class="project-title">Bireysel Sistem Altyapisi Projesi (Home Lab)</h3>
-                            <span class="project-date">2026</span>
+                            <h3 class="project-title" data-en='Personal System Infrastructure Project (Home Lab)' data-tr='Bireysel Sistem Altyapisi Projesi (Home Lab)'>Bireysel Sistem Altyapisi Projesi (Home Lab)</h3>
+                            <span class="project-date" data-en='2026' data-tr='2026'>2026</span>
                         </div>
                         <div class="project-body">
-                            <p class="project-description">
+                            <p class="project-description" data-en='I established a scalable web infrastructure by providing secure SSH access via a Linux virtual server. I containerized my Node.js application using Docker and deployed it as 3 containers with Docker Compose. I configured Nginx as a load balancer to balance incoming traffic. I secured it with Let\'s Encrypt SSL/HTTPS certificate, and with the monitoring and logging mechanisms I implemented, the system\'s performance can be continuously tracked in a scalable structure.' data-tr='Linux sanal sunucu üzerinden güvenli SSH erişimi sağlayarak ölçeklenebilir bir web altyapisi kurdum. Geliştirdiğim Node.js uygulamasını Dockerize edip Docker Compose ile 3 konteyner olarak ayağa kaldırdım. Gelen trafiği dengelemek için Nginx\'i load balancer olarak yapılandırdım. Let\'s Encrypt SSL/HTTPS sertifikasıyla güvenli hale getirdim ve kurduğum izleme (monitoring) ile loglama mekanizmaları sayesinde sistemin performansını sürekli takip edilebilir bir yapıya kavuşturuldum.'>
                                 Linux sanal sunucu üzerinden güvenli SSH erişimi sağlayarak ölçeklenebilir bir web altyapisi kurdum. Geliştirdiğim Node.js uygulamasını Dockerize edip Docker Compose ile 3 konteyner olarak ayağa kaldırdım. Gelen trafiği dengelemek için Nginx'i load balancer olarak yapılandırdım. Let's Encrypt SSL/HTTPS sertifikasıyla güvenli hale getirdim ve kurduğum izleme (monitoring) ile loglama mekanizmaları sayesinde sistemin performansını sürekli takip edilebilir bir yapıya kavuşturuldum.
                             </p>
                             <div class="project-tags">
@@ -275,16 +278,14 @@
 
                     <div class="project-card glass-card">
                         <div class="project-header">
-                            <h3 class="project-title">QR Etkileşimli Sosyal A (Bitirme Tezi)</h3>
-                            <span class="project-date">2024</span>
+                            <h3 class="project-title" data-en='QR Interactive Social A (Graduation Thesis)' data-tr='QR Etkileşimli Sosyal A (Bitirme Tezi)'>QR Etkileşimli Sosyal A (Bitirme Tezi)</h3>
+                            <span class="project-date" data-en='2024' data-tr='2024'>2024</span>
                         </div>
                         <div class="project-body">
-                            <p class="project-description">
+                            <p class="project-description" data-en='A new communication solution with QR labels. Create and manage QR labels. Then scan the tags to leave a message or share information. (Flutter / Firebase)' data-tr='QR etiketleri ile yeni bir iletişim çözümü. QR etiketleri oluşturun ve yönetin. Ardından etiketleri tarayarak mesaj bırakın veya bilgi paylaşın. (Flutter / Firebase)'>
                                 QR etiketleri ile yeni bir iletişim çözümü. QR etiketleri oluşturun ve yönetin. Ardından etiketleri tarayarak mesaj bırakın veya bilgi paylaşın. (Flutter / Firebase)
                             </p>
-                            
-                            </p>
-                             <div class="project-tags">
+                            <div class="project-tags">
                                 <span class="tag">Flutter</span>
                                 <span class="tag">FireBase</span>
                                 <span class="tag">HTML</span>
@@ -302,14 +303,14 @@
 
                     <div class="project-card glass-card">
                         <div class="project-header">
-                            <h3 class="project-title">Görüntü Temelli Oyun: Python Görüntü İşleme ve Unity ile Gerçek Zamanlı Çözüm, El Hareketleriyle Oynanan Bir Runner Tipi Bilgisayar Oyunu</h3>
-                            <span class="project-date">2024</span>
+                            <h3 class="project-title" data-en='Image-Based Game: Python Image Processing and Unity Real-Time Solution, Hand Gesture-Controlled Runner Game' data-tr='Görüntü Temelli Oyun: Python Görüntü İşleme ve Unity ile Gerçek Zamanlı Çözüm, El Hareketleriyle Oynanan Bir Runner Tipi Bilgisayar Oyunu'>Görüntü Temelli Oyun: Python Görüntü İşleme ve Unity ile Gerçek Zamanlı Çözüm, El Hareketleriyle Oynanan Bir Runner Tipi Bilgisayar Oyunu</h3>
+                            <span class="project-date" data-en='2024' data-tr='2024'>2024</span>
                         </div>
                         <div class="project-body">
-                            <p class="project-description">
+                            <p class="project-description" data-en='Image-based game: Python Image Processing and Unity real-time solution, hand gesture-controlled runner game.' data-tr='Görüntü temelli oyun: Python Görüntü İşleme ve Unity ile gerçek zamanlı çözüm, el hareketleriyle oynanan bir runner tipi bilgisayar oyunu.'>
                                 Görüntü temelli oyun: Python Görüntü İşleme ve Unity ile gerçek zamanlı çözüm, el hareketleriyle oynanan bir runner tipi bilgisayar oyunu.
                             </p>
-                             <div class="project-tags">
+                            <div class="project-tags">
                                 <span class="tag">Unity</span>
                                 <span class="tag">C#</span>
                                 <span class="tag">Python</span>
@@ -326,11 +327,11 @@
 
                     <div class="project-card glass-card">
                         <div class="project-header">
-                            <h3 class="project-title">ZigZag Oyunu</h3>
-                            <span class="project-date">2023</span>
+                            <h3 class="project-title" data-en='ZigZag Game' data-tr='ZigZag Oyunu'>ZigZag Oyunu</h3>
+                            <span class="project-date" data-en='2023' data-tr='2023'>2023</span>
                         </div>
                         <div class="project-body">
-                            <p class="project-description">
+                            <p class="project-description" data-en='Simple but impressive 3D ZigZag game developed for Android platform.' data-tr='Basit ama etkileyici 3D ZigZag oyunu Android platformu için geliştirildi.'>
                                 Basit ama etkileyici 3D ZigZag oyunu Android platformu için geliştirildi.
                             </p>
                             <div class="project-links">
@@ -345,18 +346,18 @@
 
             <!-- Contact Section -->
             <section class="section contact-section" id="contact" aria-label="İletişim bölümü">
-                <h2 class="section-title"><i class="fas fa-envelope"></i> İletişim</h2>
+                <h2 class="section-title" data-en='<i class="fas fa-envelope"></i> Contact' data-tr='<i class="fas fa-envelope"></i> İletişim'><i class="fas fa-envelope"></i> İletişim</h2>
                 <div class="contact-container glass-card">
                     <div class="contact-info">
-                        <div class="contact-item">
+                        <div class="contact-item" data-en='<i class="fas fa-envelope"></i><span>hasanversion2009@gmail.com</span>' data-tr='<i class="fas fa-envelope"></i><span>hasanversion2009@gmail.com</span>'>
                             <i class="fas fa-envelope"></i>
                             <span>hasanversion2009@gmail.com</span>
                         </div>
-                        <div class="contact-item">
+                        <div class="contact-item" data-en='<i class="fas fa-phone"></i><span>+90 506 645 86 11</span>' data-tr='<i class="fas fa-phone"></i><span>+90 506 645 86 11</span>'>
                             <i class="fas fa-phone"></i>
                             <span>+90 506 645 86 11</span>
                         </div>
-                        <div class="contact-item">
+                        <div class="contact-item" data-en='<i class="fas fa-map-marker-alt"></i><span>Fatih Neighborhood, Dilek Street No:7 D:6, Büyükçekmece / İstanbul</span>' data-tr='<i class="fas fa-map-marker-alt"></i><span>Fatih Mahallesi, Dilek Sokak No:7 D:6, Büyükçekmece / İstanbul</span>'>
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Fatih Mahallesi, Dilek Sokak No:7 D:6, Büyükçekmece / İstanbul</span>
                         </div>
@@ -374,9 +375,9 @@
 
             <!-- References Section -->
             <section class="section references-section" id="references" aria-label="Referanslar bölümü">
-                <h2 class="section-title"><i class="fas fa-address-card"></i> Referanslar</h2>
+                <h2 class="section-title" data-en='<i class="fas fa-address-card"></i> References' data-tr='<i class="fas fa-address-card"></i> Referanslar'><i class="fas fa-address-card"></i> Referanslar</h2>
                 <div class="glass-card">
-                    <p class="reference-item">
+                    <p class="reference-item" data-en='<strong>Mutlu Şimşek</strong><br>Bios Electronics - Production Manager<br>Phone: +90 (533) 666 43 08' data-tr='<strong>Mutlu Şimşek</strong><br>Bios Elektronik - İmalat Müdürü<br>Telefon: +90 (533) 666 43 08'>
                         <strong>Mutlu Şimşek</strong><br>
                         Bios Elektronik - İmalat Müdürü<br>
                         Telefon: +90 (533) 666 43 08
@@ -387,10 +388,10 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <div class="visitor-count">
+            <div class="visitor-count" data-en='Visitor Count: <span id="ziyaretci-sayaci">Yükleniyor...</span>' data-tr='Ziyaretçi Sayısı: <span id="ziyaretci-sayaci">Yükleniyor...</span>'>
                 Ziyaretçi Sayısı: <span id="ziyaretci-sayaci">Yükleniyor...</span>
             </div>
-            <p>&copy; <span id="year"></span> Hasan Arnavutoğlu. Tüm hakları saklıdır.</p>
+            <p data-en='&copy; <span id="year"></span> Hasan Arnavutoğlu. All rights reserved.' data-tr='&copy; <span id="year"></span> Hasan Arnavutoğlu. Tüm hakları saklıdır.'>&copy; <span id="year"></span> Hasan Arnavutoğlu. Tüm hakları saklıdır.</p>
         </footer>
     </div>
 

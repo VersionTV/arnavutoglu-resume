@@ -25,6 +25,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Initialize language toggle
+    const languageToggle = document.getElementById('language-toggle');
+    if (languageToggle) {
+        // Check for saved language preference or use browser language (default to Turkish if unsupported)
+        const savedLang = localStorage.getItem('language');
+        let detectedLang = navigator.language.substring(0, 2);
+        // Default to Turkish if language is not explicitly supported
+        if (detectedLang !== 'en' && detectedLang !== 'tr') {
+            detectedLang = 'tr';
+        }
+        const initialLang = savedLang || detectedLang;
+        setLanguage(initialLang);
+        updateLanguageToggleIcon(initialLang);
+
+        // Language toggle click handler
+        languageToggle.addEventListener('click', () => {
+            const currentLang = document.documentElement.getAttribute('data-lang');
+            const newLang = currentLang === 'tr' ? 'en' : 'tr';
+            setLanguage(newLang);
+            updateLanguageToggleIcon(newLang);
+            localStorage.setItem('language', newLang);
+        });
+    }
 
     // Add smooth scroll to all links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -134,3 +157,62 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("ziyaretci-sayaci").innerText = "Sayılmıyor";
         });
 });
+
+// Language functions
+function setLanguage(lang) {
+    // Set language attribute on html element
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang;
+
+    // Update all translatable elements
+    const translatableElements = document.querySelectorAll('[data-en]');
+    translatableElements.forEach(element => {
+        // Handle text content (for most elements)
+        if (element.dataset.en && element.dataset.tr) {
+            if (lang === 'en') {
+                element.innerHTML = element.dataset.en;
+            } else {
+                element.innerHTML = element.dataset.tr;
+            }
+        }
+        // Handle meta tags (which use content attribute instead of innerHTML)
+        else if (element.dataset.en && element.tagName.toLowerCase() === 'meta' && element.dataset.tr) {
+            if (lang === 'en') {
+                element.content = element.dataset.en;
+            } else {
+                element.content = element.dataset.tr;
+            }
+        }
+        // Handle alt attributes
+        if (element.dataset.enAlt) {
+            if (lang === 'en') {
+                element.alt = element.dataset.enAlt;
+            }
+            // For Turkish, we keep the original alt attribute (original content)
+        }
+    });
+
+    // Update CV download link based on language
+    const cvLink = document.querySelector('.cv-download-btn');
+    if (cvLink) {
+        if (lang === 'en') {
+            cvLink.href = 'hasan-arnavutoglu-EN.pdf';
+        } else {
+            cvLink.href = 'hasanarnavutoglu-cv.pdf';
+        }
+    }
+}
+
+function updateLanguageToggleIcon(lang) {
+    const languageToggle = document.getElementById('language-toggle');
+    if (languageToggle) {
+        // Update button content with flag images
+        if (lang === 'en') {
+            languageToggle.innerHTML = '<img src="assets/images/uk.png" alt="English flag" width="24" height="16" class="language-flag">';
+            languageToggle.setAttribute('aria-label', 'English - Click to switch to Turkish');
+        } else {
+            languageToggle.innerHTML = '<img src="assets/images/turkey.png" alt="Turkish flag" width="24" height="16" class="language-flag">';
+            languageToggle.setAttribute('aria-label', 'Türkçe - İngilizceye geçmek için tıklayın');
+        }
+    }
+}
